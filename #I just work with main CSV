@@ -1,0 +1,23 @@
+  import numpy as np   #I just work with main CSV 
+
+with open("train_set_x.csv", "rb") as lines:
+data = {line.split()[0]: np.array(map(float, line.split()[1:]))
+          for line in lines}
+   
+   
+   from sklearn.feature_extraction.text import CountVectorizer
+vectorizer = CountVectorizer()
+vectorizer                    
+
+X = vectorizer.fit_transform(data)
+
+
+analyze = vectorizer.build_analyzer()
+
+X_2 = bigram_vectorizer.fit_transform(data).toarray()
+ 
+from sklearn.feature_extraction.text import HashingVectorizer
+hv = HashingVectorizer(n_features=10)
+hv.transform(data)
+hv = HashingVectorizer()
+hv.transform(data)
