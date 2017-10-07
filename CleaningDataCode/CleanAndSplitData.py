@@ -20,27 +20,32 @@ final[final.Text != '']
 
 Slovak = final[final['Category'] == 0]
 Slovak.apply(lambda x: x.astype(str).str.lower())
+Slovak.Text = Slovak.Text.str.replace('\d+', '')
 French= final[final['Category'] == 1]
 French.apply(lambda x: x.astype(str).str.lower())
+French.Text = French.Text.str.replace('\d+', '')
 Spanish= final[final['Category'] == 2]
 Spanish.apply(lambda x: x.astype(str).str.lower())
+Spanish.Text = Spanish.Text.str.replace('\d+', '')
 German= final[final['Category'] == 3]
 German.apply(lambda x: x.astype(str).str.lower())
+German.Text = German.Text.str.replace('\d+', '')
 Polish= final[final['Category'] == 4]
 Polish.apply(lambda x: x.astype(str).str.lower())
+Polish.Text = Polish.Text.str.replace('\d+', '')
 
-Slovak.to_csv('Slovak.csv', index=False, sep=',',encoding='utf-8')
-French.to_csv('French.csv', index=False,sep=',', encoding='utf-8')
-Spanish.to_csv('Spanish.csv', index=False,sep=',', encoding='utf-8')
-German.to_csv('German.csv', index=False, sep=',',encoding='utf-8')
-Polish.to_csv('Polish.csv', index=False,sep=',', encoding='utf-8')
+Slovak.to_csv(r'./Slovak1.csv', index=False, encoding='utf-8')
+French.to_csv('./French1.csv', index=False, encoding='utf-8')
+Spanish.to_csv('Spanish1.csv', index=False, encoding='utf-8')
+German.to_csv('German1.csv', index=False, encoding='utf-8')
+Polish.to_csv('Polish1.csv', index=False, encoding='utf-8')
 
 header = ["Text"]
-Slovak.to_csv('Slovak.txt', index=False, sep=',',encoding='utf-8', columns = header)
-French.to_csv('French.txt', index=False,sep=',', encoding='utf-8', columns = header)
-Spanish.to_csv('Spanish.txt', index=False,sep=',', encoding='utf-8', columns = header)
-German.to_csv('German.txt', index=False, sep=',',encoding='utf-8', columns = header)
-Polish.to_csv('Polish.txt', index=False,sep=',', encoding='utf-8', columns = header)
+Slovak.to_csv('Slovak_v1.txt', index=False,encoding='utf-8', columns = header)
+French.to_csv('French_v1.txt', index=False, encoding='utf-8', columns = header)
+Spanish.to_csv('Spanish_v1.txt', index=False, encoding='utf-8', columns = header)
+German.to_csv('German_v1.txt', index=False,encoding='utf-8', columns = header)
+Polish.to_csv('Polish_v1.txt', index=False, encoding='utf-8', columns = header)
 
 
 
